@@ -86,7 +86,7 @@ def main():
           "      |_|    \\__, |_____/ \\___\\__,_|_| |_|\n"
           "              __/ |\n"
           "             |___/\n"
-          f"Blazing-fast port scanner made with Python and ♥️{Color.CEND}\n"
+          f"Blazing-fast port scanner made with Python and ♥️{Color.CEND}\n\n"
 
           f"Launching PyScan scan of {config.ip_address} with:\n"
           f"  · Batch size of {config.batch}, with {config.batch_threads} threads per batch\n"
@@ -108,7 +108,7 @@ def main():
 
     if result:
         nmap_command = ["nmap", *config.nmap_command, "-p", ','.join(result), config.ip_address]
-        print(f"{Color.CBLUE}Launching nmap  with command: '{' '.join(nmap_command)}'{Color.CEND}\n")
+        print(f"{Color.CBLUE}Launching nmap with command: '{' '.join(nmap_command)}'{Color.CEND}\n")
         subprocess.run(nmap_command)
     else:
         print(f"{Color.CBLUE}No open ports found, nmap wont be executed{Color.CEND}")
